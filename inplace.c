@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
+/*
+ * Given a string of words delimited by spaces,
+ * reverse the words in string.
+ * For example, given "hello world here", return "here world hello"
+ * 
+ * Follow-up:
+ * given a mutable string representation,
+ * can you perform this operation in-place?
+ */
+
 int
 main(int ac, char **av)
 {
@@ -12,7 +22,7 @@ main(int ac, char **av)
 
 	printf("Original string: \"%s\"\n", original);
 
-	// reverse the entire string
+	// reverse the entire string in-place
 	for (i = 0, j = strlen(copy) - 1; i < j; i++, j--) {
 		char tmp = copy[i];
 		copy[i] = copy[j];
@@ -21,7 +31,7 @@ main(int ac, char **av)
 
 	printf("Reversed string: \"%s\"\n", copy);
 
-	// reverse individual space-separated words
+	// reverse individual space-separated words in-place
 	max = strlen(copy);
 	for (i = 0; i < max; ) {
 		int itmp, jtmp;
